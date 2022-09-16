@@ -74,7 +74,8 @@ class VendorRoleDropdown(discord.ui.Select):
 
     async def callback(self, interaction: discord.Interaction):
         await interaction.response.send_message(
-            f'Please wait for a member of the moderation team to get in touch to verify your employment with {self.values[0]}'
+            f'Please wait for a member of the moderation team to get in touch to verify your employment with {self.values[0]}',
+            ephemeral=True
         )
 
 

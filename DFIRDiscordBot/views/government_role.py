@@ -28,7 +28,8 @@ class GovernmentRoleDropdown(discord.ui.Select):
         if role:
             await interaction.user.add_roles(role, reason="Bot role update")
             await interaction.response.send_message(
-                f'Your roles have been updated to: {role_name}'
+                f'Your roles have been updated to: {role_name}',
+                ephemeral=True
             )
         else:
             print(f"Unable to get Role for {role_name}")

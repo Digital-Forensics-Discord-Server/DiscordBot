@@ -124,11 +124,11 @@ class LawEnforcementRoleDropdown(discord.ui.Select):
                 description="Member of the Icelandic Police",
                 emoji='🇮🇸',
             ),
-            # discord.SelectOption(
-            #     label="UK",
-            #     description="Officer/Staff of a UK Police Force or NCA",
-            #     emoji='🇬🇧',
-            # ),
+            discord.SelectOption(
+                label="UK",
+                description="Officer/Staff of a UK Police Force or NCA",
+                emoji='🇬🇧',
+            ),
             # discord.SelectOption(
             #     label="USA",
             #     description="Sworn/Unsworn LE officer of a regional/state/federal LEA",
@@ -148,7 +148,8 @@ class LawEnforcementRoleDropdown(discord.ui.Select):
         if role:
             await interaction.user.add_roles(role, reason="Bot role update")
             await interaction.response.send_message(
-                f'Your roles have been updated to: {role_name}'
+                f'Your roles have been updated to: {role_name}',
+                ephemeral=True
             )
         else:
             print(f"Unable to get Role for {role_name}")

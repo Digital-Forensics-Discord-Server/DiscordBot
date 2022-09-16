@@ -18,8 +18,6 @@ class GeneralRoleDropdown(discord.ui.Select):
     ]
 
     def __init__(self):
-
-        # Set the options that will be presented inside the dropdown
         options = [
             discord.SelectOption(
                 label="Law Enforcement",
@@ -80,7 +78,6 @@ class GeneralRoleDropdown(discord.ui.Select):
         )
 
     async def callback(self, interaction: discord.Interaction):
-
         # Start by removing all current roles that user has
         for current_role in interaction.user.roles:
             if current_role.name in self.IGNORED_ROLES:
@@ -97,27 +94,31 @@ class GeneralRoleDropdown(discord.ui.Select):
                 await interaction.user.add_roles(role, reason="Bot role update")
             else:
                 print(f"Unable to get Role for {selected_role}")
-            
-        await interaction.response.send_message(
-            f'Your roles have been updated to: {", ".join(self.values)}'
+        
+        interaction = await interaction.response.send_message(
+            f'Your roles have been updated to: {", ".join(self.values)}',
+            ephemeral=True
         )
 
         if "Vendor" in self.values:
-            await interaction.channel.send(
+            await interaction.followup.send(
                 'Please select the Vendor you work for. Please note that this step requires additional verification with the Moderation team',
-                view = VendorRoleDropdownView()
+                view = VendorRoleDropdownView(),
+                ephemeral=True
             )
         
         if "Law Enforcement" in self.values:
-            await interaction.channel.send(
+            await interaction.followup.send(
                 'Please select the country you are a Law Enforcement officer / staff in',
-                view = LawEnforcementRoleDropdownView()
+                view = LawEnforcementRoleDropdownView(),
+                ephemeral=True
             )
         
         if "Government" in self.values:
-            await interaction.channel.send(
+            await interaction.followup.send(
                 'Please select the country you are a Government employee in',
-                view = GovernmentRoleDropdownView()
+                view = GovernmentRoleDropdownView(),
+                ephemeral=True
             )
 
 

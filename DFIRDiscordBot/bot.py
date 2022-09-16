@@ -1,6 +1,4 @@
-from DFIRDiscordBot.client import BotClient
-from DFIRDiscordBot.commands import DFIRCommands
-
+from discord.ext.commands import Bot
 import discord
 
 class DFIRBot():
@@ -13,7 +11,8 @@ class DFIRBot():
         # We need to be able to modify roles
         self.intents.members = True
         # Create the bot client
-        self.client = BotClient(intents=self.intents, command_prefix='/')
+        self.client = Bot(intents=self.intents, command_prefix='/')
+        self.client.load_extension("DFIRDiscordBot.commands")
     
     def run(self):
         # Run the bot
