@@ -2,6 +2,7 @@ from DFIRDiscordBot.views.government_role import GovernmentRoleDropdownView
 from DFIRDiscordBot.views.law_enforcement_role import LawEnforcementRoleDropdownView
 from DFIRDiscordBot.views.vendor_role import VendorRoleDropdownView
 
+from discord.ext import pages
 import discord
 
 
@@ -108,11 +109,17 @@ class GeneralRoleDropdown(discord.ui.Select):
             )
         
         if "Law Enforcement" in self.values:
-            await interaction.followup.send(
-                'Please select the country you are a Law Enforcement officer / staff in',
-                view = LawEnforcementRoleDropdownView(),
-                ephemeral=True
+            paginator = pages.Paginator(
+                pages=[
+                    pages.Page(content="", custom_view=LawEnforcementRoleDropdownView(page=1)),
+                    pages.Page(content="", custom_view=LawEnforcementRoleDropdownView(page=2)),
+                    pages.Page(content="", custom_view=LawEnforcementRoleDropdownView(page=3)),
+                ],
+                loop_pages=False,
+                show_indicator=True,
+                default_button_row=1,
             )
+            await paginator.respond(interaction, ephemeral=True)
         
         if "Government" in self.values:
             await interaction.followup.send(

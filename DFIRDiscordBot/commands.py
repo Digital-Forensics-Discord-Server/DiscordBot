@@ -1,5 +1,5 @@
 from DFIRDiscordBot.views.general_role import GeneralRoleDropdownView
-from discord.ext import commands
+from discord.ext import commands, pages
 
 import discord
 
