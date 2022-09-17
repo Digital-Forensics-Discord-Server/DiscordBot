@@ -45,10 +45,10 @@ class DFIRCommands(commands.Cog):
             )
             await vendor_view.wait()
 
-            await interaction.response.send_message(
-                f'Please wait for a member of the moderation team to get in touch to verify your employment with {vendor_view.get_selection()}',
-                ephemeral=True
-            )
+            import os
+            mod_channel = discord.utils.get(interaction.guild.text_channels, name=os.getenv("MOD_CHANNEL_NAME"))
+            if mod_channel:
+                await mod_channel.send(f"User <@{interaction.user.id}> has requested the following Vendor role: {vendor_view.get_selection()}")
 
         # If we've specified we're law enforcement in one of our selected roles
         if "Law Enforcement" in view.get_selections():
