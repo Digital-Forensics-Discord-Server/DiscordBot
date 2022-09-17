@@ -84,5 +84,4 @@ class VendorRoleDropdownView(discord.ui.View):
         self.add_item(self.dropdown_view)
 
     def get_selection(self):
-        print(self.dropdown_view.values)
         return self.dropdown_view.values[0]

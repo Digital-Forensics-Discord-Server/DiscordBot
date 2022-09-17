@@ -25,31 +25,16 @@ class DFIRCommands(commands.Cog):
 
     @discord.slash_command(name="updateroles", description="Update DFIR server role(s)")
     async def command_update_roles(self, ctx: discord.ApplicationContext):
+        added_roles = []
 
         view = GeneralRoleDropdownView()
         interaction = await ctx.send_response(
             "Please select your role", view=view, ephemeral=True
         )
         await view.wait()
-
-        # Start by removing all current roles that user has
-        for current_role in interaction.user.roles:
-            if current_role.name in IGNORED_ROLES:
-                continue
-            await interaction.user.remove_roles(current_role)
-
-        # Loop through the list of users and start assigning
-        added_roles = []
-        for selected_role in view.get_selections():
-            if selected_role in IGNORED_ROLES:
-                continue
-
-            role = discord.utils.get(interaction.guild.roles, name=selected_role)
-            if role:
-                await interaction.user.add_roles(role, reason="Bot role update")
-                added_roles.append(selected_role)
-            else:
-                print(f"Unable to get Role for {selected_role}")
+        
+        for role in view.get_selections():
+            added_roles.append(role)
 
         # If we've specified we're a vendor in one of our selected roles
         if "Vendor" in view.get_selections():
@@ -90,7 +75,6 @@ class DFIRCommands(commands.Cog):
             role_name = f"Law Enforcement [{paginator.pages[paginator.current_page].custom_view.get_selection()}]"
             role = discord.utils.get(interaction.guild.roles, name=role_name)
             if role:
-                await interaction.user.add_roles(role, reason="Bot role update")
                 added_roles.append(role_name)
             else:
                 print(f"Unable to get Role for {role_name}")
@@ -107,13 +91,29 @@ class DFIRCommands(commands.Cog):
             role_name = f"Government [{gov_view.get_selection()}]"
             role = discord.utils.get(interaction.guild.roles, name=role_name)
             if role:
-                await interaction.user.add_roles(role, reason="Bot role update")
                 added_roles.append(role_name)
             else:
                 print(f"Unable to get Role for {role_name}")
 
+        # Start by removing all current roles that user has
+        for current_role in interaction.user.roles:
+            if current_role.name in IGNORED_ROLES:
+                continue
+            await interaction.user.remove_roles(current_role)
+
+        # Loop through the list of users and start assigning
+        for selected_role in added_roles:
+            if selected_role in IGNORED_ROLES:
+                continue
+
+            role = discord.utils.get(interaction.guild.roles, name=selected_role)
+            if role:
+                await interaction.user.add_roles(role, reason="Bot role update")
+            else:
+                print(f"Unable to get Role for {selected_role}")
+
         await interaction.edit_original_message(
-            content=f'Your roles have been updated to: {", ".join(added_roles)}',
+            content=f'Your roles have been updated to: {", ".join(added_roles)}. If you specified a vendor, please wait for a member of the moderation team to get in touch',
             view=None
         )
 
