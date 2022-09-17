@@ -161,7 +161,7 @@ class LawEnforcementRoleDropdown(discord.ui.Select):
                 discord.SelectOption(
                     label="Italy",
                     description="Member of the Carabiniari/State/Provincial/Municipal Police",
-                    emoji='🇮🇱',
+                    emoji='🇮🇹',
                 ),
                 discord.SelectOption(
                     label="Jamaica",
@@ -252,14 +252,59 @@ class LawEnforcementRoleDropdown(discord.ui.Select):
         elif page == 3:
             options = [
                 discord.SelectOption(
+                    label="Spain",
+                    description="Member of the Spanish Guardia Civil/Policia National/Policia Local",
+                    emoji='🇪🇸',
+                ),
+                discord.SelectOption(
+                    label="Sweden",
+                    description="Member of the Swedish Police Authority",
+                    emoji='🇸🇪',
+                ),
+                discord.SelectOption(
+                    label="Switzerland",
+                    description="Member of a Cantonal/Municipal Swiss Police Agency",
+                    emoji='🇨🇭',
+                ),
+                discord.SelectOption(
+                    label="Taiwan",
+                    description="Member of the Taiwanese National Police Agency",
+                    emoji='🇹🇼',
+                ),
+                discord.SelectOption(
+                    label="Turkey",
+                    description="Member of the General Directorate of Security/Gendarmerie",
+                    emoji='🇹🇷',
+                ),
+                discord.SelectOption(
+                    label="Ukraine",
+                    description="Member of the National Police of Ukraine",
+                    emoji='🇺🇦',
+                ),
+                discord.SelectOption(
+                    label="United Arab Emirates",
+                    description="Member of an Emirate's Police Force",
+                    emoji='🇦🇪',
+                ),
+                discord.SelectOption(
                     label="UK",
-                    description="Officer/Staff of a UK Police Force or NCA",
+                    description="Constable/Staff of a UK Police Force/NCA",
                     emoji='🇬🇧',
+                ),
+                discord.SelectOption(
+                    label="Uruguay",
+                    description="National Police of Uruguay",
+                    emoji='🇺🇾',
                 ),
                 discord.SelectOption(
                     label="USA",
                     description="Sworn/Unsworn LE officer of a regional/state/federal LEA",
                     emoji='🇺🇸',
+                ),
+                discord.SelectOption(
+                    label="Vietnam",
+                    description="Member of the Vietnam People's Police",
+                    emoji='🇻🇳',
                 ),
             ]
 
@@ -284,6 +329,6 @@ class LawEnforcementRoleDropdown(discord.ui.Select):
 
 
 class LawEnforcementRoleDropdownView(discord.ui.View):
-    def __init__(self):
+    def __init__(self, page):
         super().__init__()
-        self.add_item(LawEnforcementRoleDropdown())
+        self.add_item(LawEnforcementRoleDropdown(page))
