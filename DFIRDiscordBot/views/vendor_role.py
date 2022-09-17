@@ -73,13 +73,16 @@ class VendorRoleDropdown(discord.ui.Select):
         )
 
     async def callback(self, interaction: discord.Interaction):
-        await interaction.response.send_message(
-            f'Please wait for a member of the moderation team to get in touch to verify your employment with {self.values[0]}',
-            ephemeral=True
-        )
+        await interaction.response.defer()
+        self.view.stop()
 
 
 class VendorRoleDropdownView(discord.ui.View):
     def __init__(self):
         super().__init__()
-        self.add_item(VendorRoleDropdown())
+        self.dropdown_view = VendorRoleDropdown()
+        self.add_item(self.dropdown_view)
+
+    def get_selection(self):
+        print(self.dropdown_view.values)
+        return self.dropdown_view.values[0]

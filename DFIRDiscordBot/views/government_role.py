@@ -23,19 +23,15 @@ class GovernmentRoleDropdown(discord.ui.Select):
         )
 
     async def callback(self, interaction: discord.Interaction):
-        role_name = f"Government [{self.values[0]}]"
-        role = discord.utils.get(interaction.guild.roles, name=role_name)
-        if role:
-            await interaction.user.add_roles(role, reason="Bot role update")
-            await interaction.response.send_message(
-                f'Your roles have been updated to: {role_name}',
-                ephemeral=True
-            )
-        else:
-            print(f"Unable to get Role for {role_name}")
+        await interaction.response.defer()
+        self.view.stop()
 
 
 class GovernmentRoleDropdownView(discord.ui.View):
     def __init__(self):
         super().__init__()
-        self.add_item(GovernmentRoleDropdown())
+        self.dropdown_view = GovernmentRoleDropdown()
+        self.add_item(self.dropdown_view)
+    
+    def get_selection(self):
+        return self.dropdown_view.values[0]
