@@ -29,7 +29,9 @@ class DFIRCommands(commands.Cog):
 
         view = GeneralRoleDropdownView()
         interaction = await ctx.send_response(
-            "Please select your role", view=view, ephemeral=True
+            "Welcome to the DFIR Discord Server. Please select the role which most describes your current experience and position within DFIR",
+            view=view,
+            ephemeral=True
         )
         await view.wait()
         
@@ -116,6 +118,15 @@ class DFIRCommands(commands.Cog):
             content=f'Your roles have been updated to: {", ".join(added_roles)}. If you specified a vendor, please wait for a member of the moderation team to get in touch',
             view=None
         )
+    
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print(f"Logged on as {self.bot.user}")
+        activity = discord.Activity(
+            type=discord.ActivityType.watching,
+            name="the DFIR server",
+        )
+        await self.bot.change_presence(status=discord.Status.online, activity=activity)
 
 
 def setup(bot):
