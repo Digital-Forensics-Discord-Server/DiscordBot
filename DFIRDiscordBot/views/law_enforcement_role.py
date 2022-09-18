@@ -252,6 +252,71 @@ class LawEnforcementRoleDropdown(discord.ui.Select):
         elif page == 3:
             options = [
                 discord.SelectOption(
+                    label="Nigeria",
+                    description="Member of the Nigeria Police Force",
+                    emoji='🇳🇬',
+                ),
+                discord.SelectOption(
+                    label="Norway",
+                    description="Member of the Norwegian Police Service",
+                    emoji='🇳🇴',
+                ),
+                discord.SelectOption(
+                    label="Pakistan",
+                    description="Member of the Pakistani Federal/Provincial Police",
+                    emoji='🇵🇰',
+                ),
+                discord.SelectOption(
+                    label="Poland",
+                    description="Member of the Polish Policja",
+                    emoji='🇵🇱',
+                ),
+                discord.SelectOption(
+                    label="Portugal",
+                    description="Member of the Portugese National/Public Security/Judicial Police",
+                    emoji='🇵🇹',
+                ),
+                discord.SelectOption(
+                    label="Romania",
+                    description="Member of the Romanian Police",
+                    emoji='🇷🇴',
+                ),
+                discord.SelectOption(
+                    label="Royal Cayman Islands",
+                    description="Member of the Royal Cayman Islands Police Service",
+                    emoji='🇰🇾',
+                ),
+                discord.SelectOption(
+                    label="Russia",
+                    description="Member of the Russian Police",
+                    emoji='🇷🇺',
+                ),
+                discord.SelectOption(
+                    label="Senegal",
+                    description="Member of the Senegalese National Police/Gendarmerie",
+                    emoji='🇸🇳',
+                ),
+                discord.SelectOption(
+                    label="Seychelles",
+                    description="Member of the Seychelles Police Force",
+                    emoji='🇸🇨',
+                ),
+                discord.SelectOption(
+                    label="Singapore",
+                    description="Member of the Singapore Police Force",
+                    emoji='🇸🇬',
+                ),
+                discord.SelectOption(
+                    label="Slovakia",
+                    description="Member of the Slovak Police Force",
+                    emoji='🇸🇰',
+                ),
+                discord.SelectOption(
+                    label="Slovenia",
+                    description="Member of the Slovenian National Police Force",
+                    emoji='🇸🇮',
+                ),
+                discord.SelectOption(
                     label="Spain",
                     description="Member of the Spanish Guardia Civil/Policia National/Policia Local",
                     emoji='🇪🇸',
