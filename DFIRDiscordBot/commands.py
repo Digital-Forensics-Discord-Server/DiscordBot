@@ -7,16 +7,15 @@ from DFIRDiscordBot.views.vendor_role import VendorRoleDropdownView
 from discord.ext import commands, pages
 
 import discord
+import os
+import re
 
+# Roles we don't want to remove
 IGNORED_ROLES = [
-    "Government",
-    "Law Enforcement",
-    "Vendor",
     "Moderators",
     "Contributor",
     "DFIR Author",
     "Nitro Booster",
-    "@everyone",
 ]
 
 
@@ -51,10 +50,10 @@ class DFIRCommands(commands.Cog):
             )
             await vendor_view.wait()
 
-            import os
             mod_channel = discord.utils.get(ctx.guild.text_channels, name=os.getenv("MOD_CHANNEL_NAME"))
             if mod_channel:
                 await mod_channel.send(f"User <@{ctx.user.id}> has requested the following Vendor role: {vendor_view.get_selection()}")
+            added_roles.remove("Vendor")
 
         # If we've specified we're law enforcement in one of our selected roles
         if "Law Enforcement" in view.get_selections():
@@ -103,8 +102,8 @@ class DFIRCommands(commands.Cog):
                 print(f"Unable to get Role for {role_name}")
             added_roles.remove("Government")
 
-        # Start by removing all current roles that user has
-        for current_role in ctx.user.roles:
+        # Start by removing all current roles that user has. [0] is @everyone
+        for current_role in ctx.user.roles[1:]:
             if current_role.name in IGNORED_ROLES:
                 continue
             await ctx.user.remove_roles(current_role)
@@ -125,9 +124,20 @@ class DFIRCommands(commands.Cog):
             view=None
         )
 
-    @discord.slash_command(name="verify", description="This command is used to verify users in certain roles via email addresses")
+    @discord.slash_command(name="verify", description="This command is used for optional email verification for Law Enforcement, Government Agencies and Vendors")
     async def verify(self, ctx: discord.ApplicationContext):
-        await ctx.send_response(content="This command will be used in future for optional email verification for Law Enforcement and vendors", ephemeral=True)
+        for role in ctx.user.roles[1:]:
+            square_brackets = r"\[(.*?)\]"
+            role_subset = re.search(square_brackets, role.name)
+            # We matched on a role with [<Country>] in
+            if role_subset:
+                country = role_subset.group()[1:-1]
+                if role.name.startswith("Law Enforcement"):
+                    pass
+                elif role.name.startswith("Government"):
+                    pass
+
+        await ctx.send_response(content="This command will be used in future for optional email verification for Law Enforcement, Government Agencies and Vendors", ephemeral=True)
     
     @commands.Cog.listener()
     async def on_ready(self):

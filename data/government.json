@@ -1,0 +1,168 @@
+[
+    {
+        "role_name": "Argentina",
+        "description": "Employee of a Argentinian Government Agency",
+        "flag_emoji": "🇦🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Australia",
+        "description": "Employee of an Australian Government Agency",
+        "flag_emoji": "🇦🇺",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Canada",
+        "description": "Employee of a Canadian Government Agency",
+        "flag_emoji": "🇨🇦",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Chile",
+        "description": "Employee of a Chilean Government Agency",
+        "flag_emoji": "🇨🇱",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "China",
+        "description": "Employee of a Chinese Government Agency",
+        "flag_emoji": "🇨🇳",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Colombia",
+        "description": "Employee of a Colombian Government Agency",
+        "flag_emoji": "🇨🇴",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Denmark",
+        "description": "Employee of a Danish Government Agency",
+        "flag_emoji": "🇩🇰",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Europe",
+        "description": "Employee of the European Union",
+        "flag_emoji": "🇪🇺",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "France",
+        "description": "Employee of a French Government Agency",
+        "flag_emoji": "🇫🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Germany",
+        "description": "Employee of a German Government Agency",
+        "flag_emoji": "🇩🇪",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Greece",
+        "description": "Employee of a Greek/Hellenic Government Agency",
+        "flag_emoji": "🇬🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "India",
+        "description": "Employee of an Indian Government Agency",
+        "flag_emoji": "🇮🇳",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Indonesia",
+        "description": "Employee of an Indonesian Government Agency",
+        "flag_emoji": "🇮🇩",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Malaysia",
+        "description": "Employee of a Malaysian Government Agency",
+        "flag_emoji": "🇲🇾",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "North Macedonia",
+        "description": "Employee of a North Macedonian Government Agency",
+        "flag_emoji": "🇲🇰",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Netherlands",
+        "description": "Employee of a Dutch Government Agency",
+        "flag_emoji": "🇳🇱",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Norway",
+        "description": "Employee of a Norwegian Government Agency",
+        "flag_emoji": "🇳🇴",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Philippines",
+        "description": "Employee of a Philippine Government Agency",
+        "flag_emoji": "🇵🇭",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Poland",
+        "description": "Employee of a Polish Government Agency",
+        "flag_emoji": "🇵🇱",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Singapore",
+        "description": "Employee of a Singaporean Government Agency",
+        "flag_emoji": "🇸🇬",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "South Korea",
+        "description": "Employee of a South Korean Government Agency",
+        "flag_emoji": "🇰🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Sweden",
+        "description": "Employee of a Swedish Government Agency",
+        "flag_emoji": "🇸🇪",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Turkey",
+        "description": "Employee of a Turkish Government Agency",
+        "flag_emoji": "🇹🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "UAE",
+        "description": "Employee of a United Arab Emierates Government Agency",
+        "flag_emoji": "🇦🇪",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "UK",
+        "description": "Employee of a UK Government Agency",
+        "flag_emoji": "🇬🇧",
+        "whitelisted_emails": [
+            "gov.uk"
+        ]
+    },
+    {
+        "role_name": "USA",
+        "description": "Employee of a US Federal or State agency",
+        "flag_emoji": "🇺🇸",
+        "whitelisted_emails": [
+            ".gov"
+        ]
+    },
+    {
+        "role_name": "Venezuela",
+        "description": "Employee of a Venezuelan Government Agency",
+        "flag_emoji": "🇻🇪",
+        "whitelisted_emails": []
+    }
+]

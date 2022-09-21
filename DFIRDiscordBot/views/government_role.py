@@ -1,20 +1,26 @@
 import discord
+import json
+
+
+def load_gov_data():
+    with open("data/government.json", "r", encoding='utf-8') as file:
+        data = json.load(file)
+    print(f"Loaded {len(data)} Government roles")
+    return data
+
+government_roles = load_gov_data()
 
 
 class GovernmentRoleDropdown(discord.ui.Select):
     def __init__(self):
-        options = [
-            discord.SelectOption(
-                label="UK",
-                description="Employee of a UK Government Agency",
-                emoji='🇬🇧',
-            ),
-            discord.SelectOption(
-                label="USA",
-                description="Employee of a Federal or State agency",
-                emoji='🇺🇸',
-            ),
-        ]
+        MAX_DROPDOWN = 25
+        options = []
+        for role in government_roles[:MAX_DROPDOWN]:
+            options.append(discord.SelectOption(
+                label=role["role_name"],
+                description=role["description"],
+                emoji=role["flag_emoji"]
+            ))
         super().__init__(
             placeholder="Select Country",
             min_values=1,
