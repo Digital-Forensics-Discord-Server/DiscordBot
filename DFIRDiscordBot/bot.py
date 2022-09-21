@@ -13,6 +13,7 @@ class DFIRBot():
         # Create the bot client
         self.client = Bot(intents=self.intents, command_prefix='/')
         self.client.load_extension("DFIRDiscordBot.commands")
+        self.client.load_extension("DFIRDiscordBot.events")
     
     def run(self):
         # Run the bot

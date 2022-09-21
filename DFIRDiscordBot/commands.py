@@ -34,10 +34,10 @@ class DFIRCommands(commands.Cog):
         interaction = await ctx.send_followup(
             "Please select the role which most describes your current experience and position within DFIR",
             view=view,
-            ephemeral=True
+            ephemeral=True,
         )
         await view.wait()
-        
+
         for role in view.get_selections():
             added_roles.append(role)
 
@@ -46,13 +46,17 @@ class DFIRCommands(commands.Cog):
             vendor_view = VendorRoleDropdownView()
             await interaction.edit(
                 content="Please select the Vendor you work for. Please note that this step requires additional verification with the Moderation team",
-                view=vendor_view
+                view=vendor_view,
             )
             await vendor_view.wait()
 
-            mod_channel = discord.utils.get(ctx.guild.text_channels, name=os.getenv("MOD_CHANNEL_NAME"))
+            mod_channel = discord.utils.get(
+                ctx.guild.text_channels, name=os.getenv("MOD_CHANNEL_NAME")
+            )
             if mod_channel:
-                await mod_channel.send(f"User <@{ctx.user.id}> has requested the following Vendor role: {vendor_view.get_selection()}")
+                await mod_channel.send(
+                    f"User <@{ctx.user.id}> has requested the following Vendor role: {vendor_view.get_selection()}"
+                )
             added_roles.remove("Vendor")
 
         # If we've specified we're law enforcement in one of our selected roles
@@ -73,7 +77,7 @@ class DFIRCommands(commands.Cog):
                 show_indicator=True,
                 default_button_row=1,
             )
-            
+
             await paginator.respond(test, ephemeral=True)
             await paginator.wait()
 
@@ -90,7 +94,7 @@ class DFIRCommands(commands.Cog):
             gov_view = GovernmentRoleDropdownView()
             await interaction.edit(
                 content="Please select the country you are a Government employee in",
-                view=gov_view
+                view=gov_view,
             )
             await gov_view.wait()
 
@@ -121,10 +125,13 @@ class DFIRCommands(commands.Cog):
 
         await interaction.edit(
             content=f'Your roles have been updated to: {", ".join(added_roles)}. If you specified a vendor, please wait for a member of the moderation team to get in touch to verify employment',
-            view=None
+            view=None,
         )
 
-    @discord.slash_command(name="verify", description="This command is used for optional email verification for Law Enforcement, Government & Vendors roles")
+    @discord.slash_command(
+        name="verify",
+        description="This command is used for optional email verification for Law Enforcement, Government & Vendors roles",
+    )
     async def verify(self, ctx: discord.ApplicationContext):
         for role in ctx.user.roles[1:]:
             square_brackets = r"\[(.*?)\]"
@@ -137,16 +144,10 @@ class DFIRCommands(commands.Cog):
                 elif role.name.startswith("Government"):
                     pass
 
-        await ctx.send_response(content="This command will be used in future for optional email verification for Law Enforcement, Government Agencies and Vendors", ephemeral=True)
-    
-    @commands.Cog.listener()
-    async def on_ready(self):
-        print(f"Logged on as {self.bot.user}")
-        activity = discord.Activity(
-            type=discord.ActivityType.watching,
-            name="the DFIR server",
+        await ctx.send_response(
+            content="This command will be used in future for optional email verification for Law Enforcement, Government Agencies and Vendors",
+            ephemeral=True,
         )
-        await self.bot.change_presence(status=discord.Status.online, activity=activity)
 
 
 def setup(bot):
