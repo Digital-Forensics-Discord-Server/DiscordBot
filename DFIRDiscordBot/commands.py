@@ -25,7 +25,7 @@ class DFIRCommands(commands.Cog):
         self.bot = bot
 
     @discord.slash_command(name="updateroles", description="Update DFIR server role(s)")
-    async def command_update_roles(self, ctx: discord.ApplicationContext):
+    async def update_roles(self, ctx: discord.ApplicationContext):
         modal = InformationMobile(title="Welcome to the DFIR Discord Server")
         test = await ctx.send_modal(modal)
         await modal.wait()
@@ -124,6 +124,10 @@ class DFIRCommands(commands.Cog):
             content=f'Your roles have been updated to: {", ".join(added_roles)}. If you specified a vendor, please wait for a member of the moderation team to get in touch to verify employment',
             view=None
         )
+
+    @discord.slash_command(name="verify", description="This command is used to verify users in certain roles via email addresses")
+    async def verify(self, ctx: discord.ApplicationContext):
+        await ctx.send_response(content="This command will be used in future for optional email verification for Law Enforcement and vendors", ephemeral=True)
     
     @commands.Cog.listener()
     async def on_ready(self):

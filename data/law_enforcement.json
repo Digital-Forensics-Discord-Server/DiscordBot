@@ -1,0 +1,445 @@
+[
+    {
+        "role_name": "Albania",
+        "description": "Member of Albanian Federal/Municipal Police",
+        "flag_emoji": "🇦🇱",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Argentina",
+        "description": "Member of Argentinian Federal/Provicial/Local Police",
+        "flag_emoji": "🇦🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Australia",
+        "description": "Member of Australian Federal/State Police",
+        "flag_emoji": "🇦🇺",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Austria",
+        "description": "Member of Austrian Federal/State Police",
+        "flag_emoji": "🇦🇹",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Bangladesh",
+        "description": "Member of the Bangladesh Police",
+        "flag_emoji": "🇧🇩",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Belgium",
+        "description": "Member of the Belgium Federal/Local Police",
+        "flag_emoji": "🇧🇪",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Bosnia",
+        "description": "Member of the Bosnian Police",
+        "flag_emoji": "🇧🇦",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Brazil",
+        "description": "Member of the Brazilian Federal/Civil/Municipal Police",
+        "flag_emoji": "🇧🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Canada",
+        "description": "Member of the Canadian Federal/Provincial/Municipal Police",
+        "flag_emoji": "🇨🇦",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Chile",
+        "description": "Member of the Chilian Police",
+        "flag_emoji": "🇨🇱",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "China",
+        "description": "Member of the Chinese Police",
+        "flag_emoji": "🇨🇳",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Columbia",
+        "description": "Member of the Colombian National Police",
+        "flag_emoji": "🇨🇴",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Croatia",
+        "description": "Member of the Croatian Police",
+        "flag_emoji": "🇭🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Cyprus",
+        "description": "Member of the Cypriot Police",
+        "flag_emoji": "🇨🇾",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Czech Republic",
+        "description": "Member of the Czech State/Municipal Police",
+        "flag_emoji": "🇨🇿",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Denmark",
+        "description": "Member of the Danish Police",
+        "flag_emoji": "🇩🇰",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Dominican Republic",
+        "description": "Member of the Dominican Republic's National Police",
+        "flag_emoji": "🇩🇴",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Estonia",
+        "description": "Member of the Estonian Police and Border Guard",
+        "flag_emoji": "🇪🇪",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Finland",
+        "description": "Member of the Finnish Police",
+        "flag_emoji": "🇫🇮",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "France",
+        "description": "Member of the French Police Nationale/Gendarmerie/Municipal Police",
+        "flag_emoji": "🇫🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Germany",
+        "description": "Member of German Federal/State/Municipal Police",
+        "flag_emoji": "🇩🇪",
+        "whitelisted_emails": [
+            "polizei.bund.de"
+        ] 
+    },
+    {
+        "role_name": "Greece",
+        "description": "Member of the Greek/Hellenic Police",
+        "flag_emoji": "🇬🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Grenada",
+        "description": "Member of the Royal Grenada Police Force",
+        "flag_emoji": "🇬🇩",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Iceland",
+        "description": "Member of the Icelandic Police",
+        "flag_emoji": "🇮🇸",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "India",
+        "description": "Member of the Indian Police Service",
+        "flag_emoji": "🇮🇳",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Indonesia",
+        "description": "Member of the Indonesian National Police/Municipal Police",
+        "flag_emoji": "🇮🇩",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Iran",
+        "description": "Member of the Law Enforcement Command of Islamic Republic of Iran",
+        "flag_emoji": "🇮🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Iraq",
+        "description": "Member of the Iraqi Police",
+        "flag_emoji": "🇮🇶",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Ireland",
+        "description": "Member of the Garda Síochána",
+        "flag_emoji": "🇮🇪",
+        "whitelisted_emails": [
+            "garda.ie"
+        ]
+    },
+    {
+        "role_name": "Israel",
+        "description": "Member of the Israeli Police",
+        "flag_emoji": "🇮🇱",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Italy",
+        "description": "Member of the Carabiniari/State/Provincial/Municipal Police",
+        "flag_emoji": "🇮🇹",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Jamaica",
+        "description": "Member of the Jamaica Constabulary Force",
+        "flag_emoji": "🇯🇲",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Japan",
+        "description": "Member of the Japanese National Police Agency",
+        "flag_emoji": "🇯🇵",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Korea",
+        "description": "Member of the Korean National Police Agency",
+        "flag_emoji": "🇰🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Latvia",
+        "description": "Member of the State Police of Latvia",
+        "flag_emoji": "🇱🇻",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Lithuania",
+        "description": "Member of the Lithuanian Police Force",
+        "flag_emoji": "🇱🇹",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Luxembourg",
+        "description": "Member of the Grand Ducal Police",
+        "flag_emoji": "🇱🇺",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Malaysia",
+        "description": "Member of the Royal Malaysia Police",
+        "flag_emoji": "🇲🇾",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Maldives",
+        "description": "Member of the Maldives Police Force",
+        "flag_emoji": "🇲🇻",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Malta",
+        "description": "Member of the Malta Police Force",
+        "flag_emoji": "🇲🇹",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Mauritius",
+        "description": "Member of the Mauritius Police Force",
+        "flag_emoji": "🇲🇺",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Mexico",
+        "description": "Member of the Mexican Federal/State/Municipal Police",
+        "flag_emoji": "🇲🇽",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Monaco",
+        "description": "Member of the Public Security of Monaco",
+        "flag_emoji": "🇲🇨",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Mongolia",
+        "description": "Member of the Mongolian National Police Agency",
+        "flag_emoji": "🇲🇳",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Myanmar",
+        "description": "Member of the Myanmar Police Force",
+        "flag_emoji": "🇲🇲",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Nepal",
+        "description": "Member of the Nepalese Police Force",
+        "flag_emoji": "🇳🇵",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Netherlands",
+        "description": "Member of the Dutch Politie",
+        "flag_emoji": "🇳🇱",
+        "whitelisted_emails": [
+            "politie.nl"
+        ]
+    },
+    {
+        "role_name": "New Zealand",
+        "description": "Member of the New Zealand Police",
+        "flag_emoji": "🇳🇿",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Nigeria",
+        "description": "Member of the Nigeria Police Force",
+        "flag_emoji": "🇳🇬",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Norway",
+        "description": "Member of the Norwegian Police Service",
+        "flag_emoji": "🇳🇴",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Pakistan",
+        "description": "Member of the Pakistani Federal/Provincial Police",
+        "flag_emoji": "🇵🇰",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Poland",
+        "description": "Member of the Polish Policja",
+        "flag_emoji": "🇵🇱",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Portugal",
+        "description": "Member of the Portugese National/Public Security/Judicial Police",
+        "flag_emoji": "🇵🇹",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Romania",
+        "description": "Member of the Romanian Police",
+        "flag_emoji": "🇷🇴",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Royal Cayman Islands",
+        "description": "Member of the Royal Cayman Islands Police Service",
+        "flag_emoji": "🇰🇾",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Russia",
+        "description": "Member of the Russian Police",
+        "flag_emoji": "🇷🇺",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Senegal",
+        "description": "Member of the Senegalese National Police/Gendarmerie",
+        "flag_emoji": "🇸🇳",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Seychelles",
+        "description": "Member of the Seychelles Police Force",
+        "flag_emoji": "🇸🇨",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Singapore",
+        "description": "Member of the Singapore Police Force",
+        "flag_emoji": "🇸🇬",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Slovakia",
+        "description": "Member of the Slovak Police Force",
+        "flag_emoji": "🇸🇰",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Slovenia",
+        "description": "Member of the Slovenian National Police Force",
+        "flag_emoji": "🇸🇮",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Spain",
+        "description": "Member of the Spanish Guardia Civil/Policia National/Policia Local",
+        "flag_emoji": "🇪🇸",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Sweden",
+        "description": "Member of the Swedish Police Authority",
+        "flag_emoji": "🇸🇪",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Switzerland",
+        "description": "Member of a Cantonal/Municipal Swiss Police Agency",
+        "flag_emoji": "🇨🇭",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Taiwan",
+        "description": "Member of the Taiwanese National Police Agency",
+        "flag_emoji": "🇹🇼",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Turkey",
+        "description": "Member of the General Directorate of Security/Gendarmerie",
+        "flag_emoji": "🇹🇷",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Ukraine",
+        "description": "Member of the National Police of Ukraine",
+        "flag_emoji": "🇺🇦",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "United Arab Emirates",
+        "description": "Member of an Emirate's Police Force",
+        "flag_emoji": "🇦🇪",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "UK",
+        "description": "Officer/Staff of a UK Police Force or NCA",
+        "flag_emoji": "🇬🇧",
+        "whitelisted_emails": [
+            ".police.uk",
+            "nca.gov.uk"
+        ] 
+    },
+    {
+        "role_name": "Uruguay",
+        "description": "National Police of Uruguay",
+        "flag_emoji": "🇺🇾",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "USA",
+        "description": "Sworn/Unsworn LE officer of a regional/state/federal LEA",
+        "flag_emoji": "🇺🇸",
+        "whitelisted_emails": [
+            "fbi.gov"
+        ] 
+    },
+    {
+        "role_name": "Vietnam",
+        "description": "Member of the Vietnam People's Police",
+        "flag_emoji": "🇻🇳",
+        "whitelisted_emails": []
+    }
+]
