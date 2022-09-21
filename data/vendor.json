@@ -1,0 +1,99 @@
+[
+    {
+        "role_name": "AboutDFIR",
+        "description": "Employee of a Argentinian Government Agency",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Amped Software",
+        "description": "An employee of Amped Software",
+        "whitelisted_emails": [
+            "ampedsoftware.com"
+        ]
+    },
+    {
+        "role_name": "Binalyze",
+        "description": "An employee of Binalyze",
+        "whitelisted_emails": [
+            "binalyze.com"
+        ]
+    },
+    {
+        "role_name": "Cellebrite",
+        "description": "An employee of Cellebrite",
+        "whitelisted_emails": [
+            "cellebrite.com"
+        ]
+    },
+    {
+        "role_name": "Data Analyzers LLC",
+        "description": "An employee of Data Analyzers LLC",
+        "whitelisted_emails": [
+            "dataanalyzers.com"
+        ]
+    },
+    {
+        "role_name": "Forensafe",
+        "description": "An employee of Forensafe",
+        "whitelisted_emails": [
+            "forensafe.com"
+        ]
+    },
+    {
+        "role_name": "Forensic Focus",
+        "description": "A contributor to Forensic Focus",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "GetData",
+        "description": "An employee of GetData",
+        "whitelisted_emails": [
+            "getdata.com"
+        ]
+    },
+    {
+        "role_name": "Hashcat",
+        "description": "A maintainer of Hashcat",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Hexordia",
+        "description": "An employee of Hexodria",
+        "whitelisted_emails": [
+            "hexordia.com"
+        ]
+    },
+    {
+        "role_name": "Magnet Forensics",
+        "description": "An employee of Magnet Forensics",
+        "whitelisted_emails": [
+            "magnetforensics.com"
+        ]
+    },
+    {
+        "role_name": "MSAB",
+        "description": "An employee of MSAB",
+        "whitelisted_emails": [
+            "msab.com"
+        ]
+    },
+    {
+        "role_name": "SANS Forensics Institute",
+        "description": "An employee of SANS Forensics Institute",
+        "whitelisted_emails": []
+    },
+    {
+        "role_name": "Sumuri",
+        "description": "An employee of Sumuri",
+        "whitelisted_emails": [
+            "sumuri.com"
+        ]
+    },
+    {
+        "role_name": "TCS Forensics",
+        "description": "An employee of TCS Forensics",
+        "whitelisted_emails": [
+            "tcsforensics.com"
+        ]
+    }
+]

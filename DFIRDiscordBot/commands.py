@@ -124,7 +124,7 @@ class DFIRCommands(commands.Cog):
             view=None
         )
 
-    @discord.slash_command(name="verify", description="This command is used for optional email verification for Law Enforcement, Government Agencies and Vendors")
+    @discord.slash_command(name="verify", description="This command is used for optional email verification for Law Enforcement, Government & Vendors roles")
     async def verify(self, ctx: discord.ApplicationContext):
         for role in ctx.user.roles[1:]:
             square_brackets = r"\[(.*?)\]"

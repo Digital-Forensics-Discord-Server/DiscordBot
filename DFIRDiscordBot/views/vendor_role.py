@@ -1,70 +1,26 @@
 import discord
+import json
+
+
+def load_vendor_data():
+    with open("data/vendor.json", "r", encoding='utf-8') as file:
+        data = json.load(file)
+    print(f"Loaded {len(data)} Vendor roles")
+    return data
+
+vendor_roles = load_vendor_data()
 
 
 class VendorRoleDropdown(discord.ui.Select):
     def __init__(self):
-        options = [
-            discord.SelectOption(
-                label="AboutDFIR",
-                description="A contributor to AboutDFIR"
-            ),
-            discord.SelectOption(
-                label="Amped Software",
-                description="An employee of Amped Software"
-            ),
-            discord.SelectOption(
-                label="Binalyze",
-                description="An employee of Binalyze"
-            ),
-            discord.SelectOption(
-                label="Cellebrite",
-                description="An employee of Cellebrite"
-            ),
-            discord.SelectOption(
-                label="Data Analyzers LLC",
-                description="An employee of Data Analyzers LLC"
-            ),
-            discord.SelectOption(
-                label="Forensafe",
-                description="An employee of Forensafe"
-            ),
-            discord.SelectOption(
-                label="Forensic Focus",
-                description="An employee of Forensic Focus"
-            ),
-            discord.SelectOption(
-                label="GetData",
-                description="An employee of GetData"
-            ),
-            discord.SelectOption(
-                label="Hashcat",
-                description="A maintainer of Hashcat"
-            ),
-            discord.SelectOption(
-                label="Hexordia",
-                description="An employee of Hexodria"
-            ),
-            discord.SelectOption(
-                label="Magnet Forensics",
-                description="An employee of Magnet Forensics"
-            ),
-            discord.SelectOption(
-                label="MSAB",
-                description="An employee of MSAB"
-            ),
-            discord.SelectOption(
-                label="SANS Forensics Institute",
-                description="An employee of SANS Forensics Institute"
-            ),
-            discord.SelectOption(
-                label="Sumuri",
-                description="An employee of Sumuri"
-            ),
-            discord.SelectOption(
-                label="TCS Forensics",
-                description="An employee of TCS Forensics"
-            ),
-        ]
+        MAX_DROPDOWN = 25
+        options = []
+        for role in vendor_roles[:MAX_DROPDOWN]:
+            options.append(discord.SelectOption(
+                label=role["role_name"],
+                description=role["description"]
+            ))
+
         super().__init__(
             placeholder="Select Vendor",
             min_values=1,
