@@ -1,6 +1,6 @@
 import discord
 
-class InformationMobile(discord.ui.Modal):
+class InformationModal(discord.ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 

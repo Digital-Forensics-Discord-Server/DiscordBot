@@ -28,3 +28,4 @@ class DFIREvents(commands.Cog):
 
 def setup(bot):
     bot.add_cog(DFIREvents(bot))
+    print("Loaded events")

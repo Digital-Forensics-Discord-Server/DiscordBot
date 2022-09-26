@@ -1,10 +1,15 @@
+from DFIRDiscordBot.db import db
+from DFIRDiscordBot.models import User, RoleChangeAudit
+
 from DFIRDiscordBot.views.general_role import GeneralRoleDropdownView
 from DFIRDiscordBot.views.government_role import GovernmentRoleDropdownView
-from DFIRDiscordBot.views.info_modal import InformationMobile
+from DFIRDiscordBot.views.info_modal import InformationModal
 from DFIRDiscordBot.views.law_enforcement_role import LawEnforcementRoleDropdownView
 from DFIRDiscordBot.views.vendor_role import VendorRoleDropdownView
 
 from discord.ext import commands, pages
+
+from sqlalchemy.orm import Session
 
 import discord
 import os
@@ -25,7 +30,7 @@ class DFIRCommands(commands.Cog):
 
     @discord.slash_command(name="updateroles", description="Update DFIR server role(s)")
     async def update_roles(self, ctx: discord.ApplicationContext):
-        modal = InformationMobile(title="Welcome to the DFIR Discord Server")
+        modal = InformationModal(title="Welcome to the DFIR Discord Server")
         test = await ctx.send_modal(modal)
         await modal.wait()
 
@@ -106,22 +111,33 @@ class DFIRCommands(commands.Cog):
                 print(f"Unable to get Role for {role_name}")
             added_roles.remove("Government")
 
-        # Start by removing all current roles that user has. [0] is @everyone
-        for current_role in ctx.user.roles[1:]:
-            if current_role.name in IGNORED_ROLES:
-                continue
-            await ctx.user.remove_roles(current_role)
+        with Session(db.engine) as session:
+            user = session.query(User).filter_by(discord_id=ctx.user.id).first()
+            if not user:
+                user = User(discord_id=ctx.user.id, discord_name=str(ctx.user), role_description=modal.get_user_description())
+                session.add(user)
+            role_audit = RoleChangeAudit(discord_id=user.discord_id, old_roles=", ".join(map(str, ctx.user.roles[1:])))
 
-        # Loop through the list of users and start assigning
-        for selected_role in added_roles:
-            if selected_role in IGNORED_ROLES:
-                continue
+            # Start by removing all current roles that user has. [0] is @everyone
+            for current_role in ctx.user.roles[1:]:
+                if current_role.name in IGNORED_ROLES:
+                    continue
+                await ctx.user.remove_roles(current_role)
 
-            role = discord.utils.get(ctx.guild.roles, name=selected_role)
-            if role:
-                await ctx.user.add_roles(role, reason="Bot role update")
-            else:
-                print(f"Unable to get Role for {selected_role}")
+            # Loop through the list of users and start assigning
+            for selected_role in added_roles:
+                if selected_role in IGNORED_ROLES:
+                    continue
+
+                role = discord.utils.get(ctx.guild.roles, name=selected_role)
+                if role:
+                    await ctx.user.add_roles(role, reason="Bot role update")
+                else:
+                    print(f"Unable to get Role for {selected_role}")
+            
+            role_audit.new_roles = ", ".join(map(str, ctx.user.roles[1:]))
+            session.add(role_audit)
+            session.commit()
 
         await interaction.edit(
             content=f'Your roles have been updated to: {", ".join(added_roles)}. If you specified a vendor, please wait for a member of the moderation team to get in touch to verify employment',
@@ -152,3 +168,4 @@ class DFIRCommands(commands.Cog):
 
 def setup(bot):
     bot.add_cog(DFIRCommands(bot))
+    print("Loaded commands")
